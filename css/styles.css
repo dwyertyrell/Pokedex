@@ -1,0 +1,24 @@
+body {
+background-color:#ffebcd;
+padding: 10px 200px;
+font-family: 'Bona Nova', sans-serif;
+}
+
+.logo {
+    border-radius: 50%;
+    transition: all ease-in-out 1s;
+}
+
+.logo:hover {
+    transform: scale(1.5);
+}
+
+/* Hi Zaheer, i am not sure why i cannot change the color of the hr and also add a linear gradient line
+could i get feedback on this please */
+hr {
+    background-image: linear-gradient(to right, #fff, #000, #fff);
+} 
+
+h1 {
+    text-align: center;
+}
