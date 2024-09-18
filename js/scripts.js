@@ -9,7 +9,7 @@ for ( let i= 0; i < pokemonList.length; i++) {
     
     document.write(pokemonList[i].name + '('+' ' + pokemonList[i].height + ' ' + ')' + ' ');
 
-    if (pokemonList[i].type[0] === 'fire') {
-        document.write( pokemonList[i].name + '-' + ' ' + 'Wow, this one is powerful!' + ' ');
+    if (pokemonList[i].height > 1.5) {
+        document.write( pokemonList[i].name + '-' + ' ' + 'Wow, this pokemon is tall!' + ' ');
     }
 }
