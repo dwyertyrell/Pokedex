@@ -13,10 +13,10 @@ font-family: 'Bona Nova', sans-serif;
     transform: scale(1.5);
 }
 
-/* Hi Zaheer, i am not sure why i cannot change the color of the hr and also add a linear gradient line
-could i get feedback on this please */
 hr {
     background-image: linear-gradient(to right, #fff, #000, #fff);
+    height: 1px;
+    border: none;
 } 
 
 h1 {
