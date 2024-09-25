@@ -31,10 +31,10 @@ list.forEach(function(creature) {
 
 
     if (creature.height > 1.5) {
-            document.write( '<p>' + creature.name + '-' + ' ' + 'Wow, this pokemon is tall!' + '</p>'); 
+            document.write( '<p>' + creature.name + '-' + ' ' + '(' + creature.height + ')' +' ' + 'Wow, this pokemon is tall!' + '</p>'); 
         }
         else {
-            document.write( '<p>' + creature.name + ' ' + '(' + ' ' + creature.height + ' ' + ')' + '</p>');
+            document.write( '<p>' + creature.name + ' ' + '(' + creature.height + ')' + '</p>');
 
         }
     });
