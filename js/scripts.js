@@ -7,14 +7,15 @@ let pokemonRepository = (function() {
         {name: 'Venusaur', type: ['grass', 'poison'], height: 2.0}
     ];
 
-    return {
-        add: function(pokemon){
+    function add(pokemon){
         pokemonList.push(pokemon)
-        },
-
-        getAll: function(){
-        return pokemonList
         }
+    function getAll(){
+        return pokemonList
+            }
+    return {
+        add: add,
+        getAll: getAll
     };
 })();
 
