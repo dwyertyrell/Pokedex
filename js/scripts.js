@@ -19,7 +19,8 @@ let pokemonRepository = (function() {
     };
 })();
 
-pokemonRepository.add({name: Ekans, type: [poison], height: 2});
+pokemonRepository.add({name: 'Ekans', type: ['poison'], height: 2});
+console.log(pokemonRepository.getAll());
 
 // we are accessing each object as an element within the array. Therefore, the parameter of the forEach()
 // acting on the array, can be used as a reference point for the objects- via dot notation.   
