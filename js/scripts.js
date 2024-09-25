@@ -24,7 +24,10 @@ console.log(pokemonRepository.getAll());
 
 // we are accessing each object as an element within the array. Therefore, the parameter of the forEach()
 // acting on the array, can be used as a reference point for the objects- via dot notation.   
-pokemonList.forEach(function(creature) {;
+let list = pokemonRepository.getAll();
+
+// why did JavaScript make me use an immediate variable to work with the forEach()? 
+list.forEach(function(creature) {;
 
     document.write( '<p>' + creature.name + ' ' +'('+' ' + creature.height + ' ' + ')' + '</p>');
 
