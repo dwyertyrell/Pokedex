@@ -27,12 +27,15 @@ console.log(pokemonRepository.getAll());
 let list = pokemonRepository.getAll();
 
 // why did JavaScript make me use an immediate variable to work with the forEach()? 
-list.forEach(function(creature) {;
+list.forEach(function(creature) {
 
-    document.write( '<p>' + creature.name + ' ' +'('+' ' + creature.height + ' ' + ')' + '</p>');
 
     if (creature.height > 1.5) {
-            document.write(creature.name + '-' + ' ' + 'Wow, this pokemon is tall!' + ' '); 
+            document.write( '<p>' + creature.name + '-' + ' ' + 'Wow, this pokemon is tall!' + '</p>'); 
+        }
+        else {
+            document.write( '<p>' + creature.name + ' ' + '(' + ' ' + creature.height + ' ' + ')' + '</p>');
+
         }
     });
 
