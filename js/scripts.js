@@ -8,8 +8,12 @@ let pokemonRepository = (function() {
     ];
 
     function add(pokemon){
-        pokemonList.push(pokemon)
+
+        if (typeof(pokemon) === 'object') {
+            pokemonList.push(pokemon)
         }
+    }
+    
     function getAll(){
         return pokemonList
             }
@@ -26,7 +30,7 @@ console.log(pokemonRepository.getAll());
 // acting on the array, can be used as a reference point for the objects- via dot notation.   
 let list = pokemonRepository.getAll();
 
-// why did JavaScript make me use an immediate variable to work with the forEach()? 
+// why did JavaScript make me use an intermediate variable to work with the forEach()? 
 list.forEach(function(creature) {
 
 
@@ -34,7 +38,7 @@ list.forEach(function(creature) {
             document.write( '<p>' + creature.name + '-' + ' ' + '(' + creature.height + ')' +' ' + 'Wow, this pokemon is tall!' + '</p>'); 
         }
         else {
-            document.write( '<p>' + creature.name + ' ' + '(' + creature.height + ')' + '</p>');
+            document.write( '<p>' + creature.name + '-' + ' ' + '(' + creature.height + ')' + '</p>');
 
         }
     });
