@@ -6,7 +6,7 @@ let pokemonRepository = (function() {
         {name: 'Weedle', type: ['bug', 'poison'], height: 0.3}, 
         {name: 'Venusaur', type: ['grass', 'poison'], height: 2.0}
     ];
-
+//  difference between my creature parameter, and my pokemon parameter
     function add(pokemon){
 
         if (typeof(pokemon) === 'object') {
@@ -20,7 +20,7 @@ let pokemonRepository = (function() {
 
     return {
         add: add,
-        getAll: getAll
+        getAll: getAll,
     };
 })();
 
@@ -35,13 +35,17 @@ let list = pokemonRepository.getAll();
 list.forEach(function(creature) {
 
 
-    if (creature.height > 1.5) {
-            document.write( '<p>' + creature.name + '-' + ' ' + '(' + creature.height + ')' +' ' + 'Wow, this pokemon is tall!' + '</p>'); 
-        }
-        else {
-            document.write( '<p>' + creature.name + '-' + ' ' + '(' + creature.height + ')' + '</p>');
+    let unOList = document.querySelector('.pokemon-list');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = creature.name;
+    button.classList.add('button');
+    // append the button to the list item as a child
+    listItem.appendChild(button);
+    // append the listItem to the unordered lists as its child 
+    unOList.appendChild(listItem)
 
-        }
     });
+    
 
 
