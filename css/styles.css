@@ -27,3 +27,14 @@ h1 {
 h1:hover {
     transform: scale(1.25);
 }
+
+.button {
+    color:#284903;
+    border-bottom: solid 2px#000;
+    margin: 2px;
+    transition: all .2s ease-in-out;
+}
+.button:hover, .button:focus {
+    transform: scale(1.25);
+}
+
