@@ -28,20 +28,24 @@ let pokemonRepository = (function() {
         listItem.appendChild(button);
         // append the listItem to the unordered lists as its child 
         unOList.appendChild(listItem);
-
-        button.addEventListener('click', function(pokemon) {
+        // avoid placing a parameter in the addEventListener- as the parameter found in the 
+        // code block is assigned to a different variable.  
+        button.addEventListener('click', function() {
             showDetails(pokemon);
         })
 
     }
 
     function showDetails(pokemon) {
-        console.log(pokemon);
+        console.log(pokemon.name);
+        console.log('type:'+ ' '+ pokemon.height);    
+        console.log('height:'+ ' '+ pokemon.height +' '+ 'm'); 
+
     }
     return {
         add: add,
         getAll: getAll,
-        addListItem: addListItem
+        addListItem: addListItem,
     };
 })();
 
