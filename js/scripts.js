@@ -56,9 +56,8 @@ pokemonRepository.add({name: 'Ekans', type: ['poison'], height: 2});
 
 // the parameter is also referencing the same object of the parameter: pokemon. 
 // therefore can replace creature with pokemon- no need to have two names for the same reference. 
-let list = pokemonRepository.getAll();
 
-list.forEach(function(pokemon) {
+pokemonRepository.getAll().forEach(function(pokemon) {
     // calling the addListItem function into my for loop. this one line code simplifies 
     // everything-since all instructions are dynamically stored in a function.  
     pokemonRepository.addListItem(pokemon);
