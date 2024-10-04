@@ -53,12 +53,26 @@ let pokemonRepository = (function() {
             console.error(e)
             });
     }
+
+    function loadDetails() {
+        let url = item.detailsUrl;
+        return fetch(url).then(function(response){
+            return response.json();
+        }).then(function(details){
+            item.imageUrl = details.sprites.front_defaults;
+            item.height = details.height;
+            item.type = details.types;
+        }).catch(function(e){
+            console.error(e);
+        });
+    }
     
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
-        loadList: loadList
+        loadList: loadList,
+        loadDetails: loadDetails
     };
 })();
 
