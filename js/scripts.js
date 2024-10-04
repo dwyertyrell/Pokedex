@@ -62,13 +62,7 @@ let pokemonRepository = (function() {
     };
 })();
 
-pokemonRepository.add({name: 'Ekans', type: ['poison'], height: 2});
-
-// we are accessing each object as an element within the array. Therefore, the parameter of the forEach()
-// acting on the array, can be used as a reference point for the objects- via dot notation. 
-
-// the parameter is also referencing the same object of the parameter: pokemon. 
-// therefore can replace creature with pokemon- no need to have two names for the same reference. 
+pokemonRepository.loadList(pokemon);
 
 pokemonRepository.getAll().forEach(function(pokemon) {
     // calling the addListItem function into my for loop. this one line code simplifies 
