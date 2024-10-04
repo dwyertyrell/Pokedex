@@ -42,7 +42,7 @@ let pokemonRepository = (function() {
         return fetch(apiUrl).then (function (response) {
             return response.json();
         }).then( function(json) {
-            json.result.forEach(function(item) {
+            json.results.forEach(function(item) {
                 let pokemon = {
                     name: item.name,
                     detailsUrl: item.url
@@ -62,13 +62,13 @@ let pokemonRepository = (function() {
     };
 })();
 
-pokemonRepository.loadList(pokemon);
+pokemonRepository.loadList().then(function() {
 
 pokemonRepository.getAll().forEach(function(pokemon) {
     // calling the addListItem function into my for loop. this one line code simplifies 
     // everything-since all instructions are dynamically stored in a function.  
     pokemonRepository.addListItem(pokemon);
+    });
 });
-    
 
 
