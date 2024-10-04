@@ -6,7 +6,7 @@ let pokemonRepository = (function() {
         {name: 'Weedle', type: ['bug', 'poison'], height: 0.3}, 
         {name: 'Venusaur', type: ['grass', 'poison'], height: 2.0}
     ];
-//  difference between my creature parameter, and my pokemon parameter
+//  difference between my creature parameter, and my pokemon parameter?
     function add(pokemon){
 
         if (typeof(pokemon) === 'object') {
