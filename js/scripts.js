@@ -1,7 +1,7 @@
 
 let pokemonRepository = (function() {
     let pokemonList = [];
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?imit=20';
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?imit=150';
 //  difference between my creature parameter, and my pokemon parameter?
     function add(pokemon){
 
@@ -59,7 +59,7 @@ let pokemonRepository = (function() {
         return fetch(url).then(function(response){
             return response.json();
         }).then(function(details){
-            item.imageUrl = details.sprites;
+            item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.type = details.types;
         }).catch(function(e) {
