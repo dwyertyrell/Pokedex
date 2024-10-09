@@ -32,11 +32,38 @@ let pokemonRepository = (function() {
 
     }
 
-    function showDetails(pokemon) {
-       loadDetails(pokemon).then(function() {
-        console.log(pokemon);
-       })
+    function showDetails(title, text, image) {
+    
+        let modalContainer = document.querySelector('#modal-container');
+
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+        
+        let closeButton = document.createElement('button');
+        closeButton.classList.add('close-Button');
+        closeButton.innerText = 'close';
+
+        let pokemonName = document.createElement('h1');
+        modalTitle.classList.add('title');
+        modalTitle.innerText = title;
+
+        let pokemonHeight = document.createElement('p');
+        pokemonHeight.innerText = text
+
+        let pokemonImage = document.createElement('img');
+
+        modal.appendChild(closeButton);
+        modal.appendChild(pokemonName);
+        modal.appendChild(pokemonHeight);
+        modal.appendChild(pokemonImage);
+        modalContainer.appendChild(modal);
+        pokemonList.appendChild(modalContainer);
+
+        modalContainer.classList.add('.is-visible');
     }
+
+
+    
 
     function loadList() {
         return fetch(apiUrl).then (function (response) {
@@ -55,6 +82,8 @@ let pokemonRepository = (function() {
     }
 
     function loadDetails(item) {
+        // now we are iterating through the nested json object found
+        //  in the url key of the resultsa object. 
         let url = item.detailsUrl;
         return fetch(url).then(function(response){
             return response.json();
