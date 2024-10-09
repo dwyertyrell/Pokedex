@@ -69,6 +69,10 @@ let pokemonRepository = (function() {
                 hideModal();
             }
         });
+
+        document.querySelector('#show-modal').addEventListener('click', () => {
+            showModal(pokemonName, pokemonHeight, pokemonImage);
+        });
     }
 
     function hideModal(){
