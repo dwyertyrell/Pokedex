@@ -2,6 +2,7 @@
 let pokemonRepository = (function() {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?imit=150';
+    let modalContainer = document.querySelector('#modal-container');
 
     function add(pokemon){
 
@@ -34,7 +35,6 @@ let pokemonRepository = (function() {
 
     function showDetails(title, text, image) {
     
-        let modalContainer = document.querySelector('#modal-container');
         let pokemonList = document.querySelector('.pokemon-list')
         let modal = document.createElement('div');
         modal.classList.add('modal');
@@ -62,6 +62,9 @@ let pokemonRepository = (function() {
         modalContainer.classList.add('.is-visible');
     }
 
+    function hideModal(){
+    modalContainer.classList.remove('.is-visible');
+    }
 
     
 
