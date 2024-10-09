@@ -42,6 +42,7 @@ let pokemonRepository = (function() {
         let closeButton = document.createElement('button');
         closeButton.classList.add('close-Button');
         closeButton.innerText = 'close';
+        closeButton.addEventListener('click', hideModal);
 
         let pokemonName = document.createElement('h1');
         pokemonName.classList.add('title');
@@ -60,12 +61,24 @@ let pokemonRepository = (function() {
         pokemonList.appendChild(modalContainer);
 
         modalContainer.classList.add('.is-visible');
+
+        modalContainer.addEventListener('click', (e) => {
+            let target = e.target;
+            if(target === modalContainer) {
+                hideModal();
+            }
+        });
     }
 
     function hideModal(){
     modalContainer.classList.remove('.is-visible');
     }
 
+    window.addEventListener('keydown', (e) => {
+        if(e.key === 'escape' && modalContainer.classList.contains('is-visible')){
+            hideModal();
+        };
+    });
     
 
     function loadList() {
