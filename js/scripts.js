@@ -33,7 +33,7 @@ let pokemonRepository = (function() {
 
     }
 
-    function showDetails(title, text, image) {
+    function showModal(title, text, img) {
     
         let pokemonList = document.querySelector('.pokemon-list')
         let modal = document.createElement('div');
@@ -53,6 +53,7 @@ let pokemonRepository = (function() {
         pokemonHeight.innerText = text;
 
         let pokemonImage = document.createElement('img');
+        pokemonImage.setAttribute('src', img);
 
         modal.appendChild(closeButton);
         modal.appendChild(pokemonName);
@@ -84,7 +85,8 @@ let pokemonRepository = (function() {
             hideModal();
         };
     });
-    
+
+
 
     function loadList() {
         return fetch(apiUrl).then (function (response) {
@@ -116,23 +118,33 @@ let pokemonRepository = (function() {
             console.error(e);
         });
     }
+
+    // replace the console log in showDetails with the showModal()
+    // within its parameters, add the corresponding key-values for their pokemon Image,
+    // pokemon Height, and pokemon Name.
+
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function() {
+            showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
+        })
+    }
     
     return {
         add: add,
         getAll: getAll,
         addListItem: addListItem,
         loadList: loadList,
-        loadDetails: loadDetails
+        loadDetails: loadDetails,
+        showDetails: showDetails 
     };
 })();
 
 pokemonRepository.loadList().then(function() {
-
-pokemonRepository.getAll().forEach(function(pokemon) {
-    // calling the addListItem function into my for loop. this one line code simplifies 
-    // everything-since all instructions are dynamically stored in a function.  
-    pokemonRepository.addListItem(pokemon);
-    });
+    pokemonRepository.getAll().forEach(function(pokemon) {
+        // calling the addListItem function into my for loop. this one line code simplifies 
+        // everything-since all instructions are dynamically stored in a function.  
+        pokemonRepository.addListItem(pokemon);
+        });
 });
 
 
