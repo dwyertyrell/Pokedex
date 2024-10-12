@@ -38,20 +38,28 @@ h1:hover {
     transform: scale(1.25);
 }
 
+/* the new styling for the modal-container: i added display: none 
+by default. once the '.is-visible' class is added via js, the display value 
+will be over-ridden with display: grid. */
 #modal-container {
     display: none;
-}
-
-#modal-container.is-visible {
     position: fixed;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #d3d3d3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
     z-index: 999;
+    justify-content: center;
+    align-items: center;
     overflow: auto;
-    display: grid;
-    text-align: center;
-}
+    }
+    #modal-container.is-visible {
+    display: flex;
+    } 
+
+    
+
 
 .modal {
     margin: auto;
