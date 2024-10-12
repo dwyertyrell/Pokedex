@@ -38,6 +38,11 @@ let pokemonRepository = (function() {
         let pokemonList = document.querySelector('.pokemon-list')
         let modal = document.createElement('div');
         modal.classList.add('modal');
+
+        // this line of code clears the modal of the pokemon in the
+        // previous 'click' event. 
+        modalContainer.innerHTML ='';
+
         
         let closeButton = document.createElement('button');
         closeButton.classList.add('close-Button');
@@ -53,7 +58,11 @@ let pokemonRepository = (function() {
         pokemonHeight.innerText = text;
 
         let pokemonImage = document.createElement('img');
-        pokemonImage.setAttribute('src', img);
+        // can use a 'src' as a property, as well as using it as an 
+        // attribute.
+        // why did i have to use the parameter img as value, 
+        // and not item.imageUrl?
+        pokemonImage.src = img;
 
         modal.appendChild(closeButton);
         modal.appendChild(pokemonName);
@@ -62,7 +71,7 @@ let pokemonRepository = (function() {
         modalContainer.appendChild(modal);
         pokemonList.appendChild(modalContainer);
 
-        modalContainer.classList.add('.is-visible');
+        modalContainer.classList.add('is-visible');
 
         modalContainer.addEventListener('click', (e) => {
             let target = e.target;
@@ -70,23 +79,18 @@ let pokemonRepository = (function() {
                 hideModal();
             }
         });
-
-        document.querySelector('#show-modal').addEventListener('click', () => {
-            showModal(pokemonName, pokemonHeight, pokemonImage);
-        });
+    
     }
 
     function hideModal(){
-    modalContainer.classList.remove('.is-visible');
+    modalContainer.classList.remove('is-visible');
     }
 
     window.addEventListener('keydown', (e) => {
-        if(e.key === 'escape' && modalContainer.classList.contains('is-visible')){
+        if(e.key === 'Escape' && modalContainer.classList.contains('is-visible')){
             hideModal();
         };
     });
-
-
 
     function loadList() {
         return fetch(apiUrl).then (function (response) {
@@ -94,6 +98,8 @@ let pokemonRepository = (function() {
         }).then( function(json) {
             json.results.forEach(function(item) {
                 let pokemon = {
+                    // values of the keys are being referenced by
+                    // the values of the keys in the result object of the json file
                     name: item.name,
                     detailsUrl: item.url
                 };
@@ -105,8 +111,8 @@ let pokemonRepository = (function() {
     }
 
     function loadDetails(item) {
-        // now we are iterating through the nested json object found
-        //  in the url key of the resultsa object. 
+    //   variable assigned to the key-value pair "url", in the result object 
+    // of the json file. 
         let url = item.detailsUrl;
         return fetch(url).then(function(response){
             return response.json();
@@ -119,12 +125,15 @@ let pokemonRepository = (function() {
         });
     }
 
+
     // replace the console log in showDetails with the showModal()
     // within its parameters, add the corresponding key-values for their pokemon Image,
     // pokemon Height, and pokemon Name.
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function() {
+            // these arguments are accessing the pokemon's object [created in 
+            // the loadList()] but through the loadDetails().
             showModal(pokemon.name, pokemon.height, pokemon.imageUrl);
         })
     }
@@ -146,5 +155,3 @@ pokemonRepository.loadList().then(function() {
         pokemonRepository.addListItem(pokemon);
         });
 });
-
-
