@@ -1,5 +1,5 @@
 body {
-background-color:#ffebcd;
+background-color:#fff;
 padding: 10px 200px;
 font-family: 'Bona Nova', sans-serif;
 }
@@ -29,8 +29,9 @@ h1:hover {
 }
 
 .button {
-    color:#284903;
-    border: solid 2px#000;
+    color:#070e01;
+    border: solid 2.5px#000;
+    border-radius: 10%;
     margin: 2px;
     transition: all .2s ease-in-out;
 }
@@ -38,44 +39,9 @@ h1:hover {
     transform: scale(1.25);
 }
 
-/* the new styling for the modal-container: i added display: none 
-by default. once the '.is-visible' class is added via js, the display value 
-will be over-ridden with display: grid. */
-#modal-container {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 999;
-    justify-content: center;
-    align-items: center;
-    overflow: auto;
-    }
-    #modal-container.is-visible {
-    display: flex;
-    } 
+/* FEEDBACK CODE */
+.is-visible {display: block;}
+
+
 
     
-
-
-.modal {
-    margin: auto;
-    display: inline-block;
-    box-sizing: border-box;
-    background-color: #ffffff;
-    padding: 15px;
-    width: 100%;
-    max-width: 700px;
-    text-align: left;
-}
-
-.title {
-    margin-top: 0;
-}
-
-.text {
-    margin-bottom: 0;
-}
