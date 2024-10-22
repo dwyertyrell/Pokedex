@@ -96,7 +96,6 @@ let pokemonRepository = (function() {
   function showModal(item) {
     let modalBody = $('.modal-body');
     let modalTitle= $('.modal-title');
-    // let modalHeader= $('.modal-header');
 
     modalTitle.empty();
     modalBody.empty();
@@ -137,6 +136,7 @@ let pokemonRepository = (function() {
 
 // needs to be more specific to prevent closing the modal 
 // if the user clicked on the modal itself. 'e' is the event object.
+
     modalContainer.addEventListener('click', (e) => {
         let target = e.target;
         if(target === modalContainer) {
