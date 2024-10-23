@@ -26,12 +26,8 @@ let pokemonRepository = (function() {
         button.classList.add('btn');
         button.classList.add('btn-light');
         button.setAttribute('data-toggle','modal');
-        // append the button to the list item as a child
         listItem.appendChild(button);
-        // append the listItem to the unordered lists as its child 
-        pokemonList.appendChild(listItem);
-        // avoid placing a parameter in the addEventListener- as the parameter found in the 
-        // code block is assigned to a different variable.  
+        pokemonList.appendChild(listItem);  
         button.addEventListener('click', function() {
             showDetails(pokemon);
         })
@@ -40,19 +36,10 @@ let pokemonRepository = (function() {
 
     function loadList() {
         return fetch(apiUrl).then (function (response) {
-            // if fetch is successful, then parse json data 
-            // into a js object
             return response.json();
-        }).then( function(json) {
-            // if the parse is successful, then iterate through the 'result'
-            // key of the json object. 
+        }).then( function(json) { 
             json.results.forEach(function(item) {
-            // due to the forEach(), its parameter 'item' is referencing each element within 
-            // the json.results (AN ARRAY) the 'item' is an object and 
-            // the name is a key of the 'item' object.
                 let pokemon = {
-                    // an object is created as the forEach() passes each element.
-                    // using the values of the 'item's value. 
                     name: item.name,
                     detailsUrl: item.url
                 };
@@ -64,21 +51,12 @@ let pokemonRepository = (function() {
     }
 
     function loadDetails(item) { 
-        // 'item' = pokemon object
-        // this function: loadDetails() is using the data that was acted upon
-        // by the last code of loadList(). therefore, 'item' refers to the pokemon object 
-        // in the add() argument- the last code 
+       
         let url = item.detailsUrl;
-        // url is the pokemon.detailsUrl in the previous function.
-        // this is a link to another api containing a json object- 
-        // therefore need to parse again. 
-        // url = pokemon.detailsUrl
+        
         return fetch(url).then(function(response){
             return response.json();
-        // 'response' = parsed pokemon.detailsUrl (an entire js object now)
         }).then(function(details){
-            // details is the 
-            //  here, we created two keys, dynamically. 
             item.imageUrl = details.sprites.front_default;
             item.height = details.height;
             item.imageBack = details.sprites.back_default;
@@ -91,8 +69,7 @@ let pokemonRepository = (function() {
         });
     }
     
-// parameter is representing the pokemon.
-// i replaced the parameter 'item' for 'pokemon' since it wasn't defined.
+
   function showModal(item) {
     let modalBody = $('.modal-body');
     let modalTitle= $('.modal-title');
@@ -119,7 +96,6 @@ let pokemonRepository = (function() {
     modalBody.append(heightElement);
     modalBody.append(typeElement);
     
-    // FEEDBACK CODE
     modalContainer.classList.add('is-visible');
     modalContainer.classList.add('show');
   };
@@ -134,8 +110,6 @@ let pokemonRepository = (function() {
         };
     });
 
-// needs to be more specific to prevent closing the modal 
-// if the user clicked on the modal itself. 'e' is the event object.
 
     modalContainer.addEventListener('click', (e) => {
         let target = e.target;
@@ -144,8 +118,6 @@ let pokemonRepository = (function() {
         }
     });
 
-// using jQuery syntax to add an event listener on the 
-// modal's closing button
     $('.close').on('click', (e) => {
         if(modalContainer) {
             hideModal();
@@ -170,8 +142,6 @@ let pokemonRepository = (function() {
 
 pokemonRepository.loadList().then(function() {
     pokemonRepository.getAll().forEach(function(pokemon) {
-        // calling the addListItem function into my for loop. this one line code simplifies 
-        // everything-since all instructions are dynamically stored in a function.  
         pokemonRepository.addListItem(pokemon);
         });
 });
