@@ -109,7 +109,7 @@ let pokemonRepository = (function() {
     let imageElementShiny = $('<img class= modal-img style= "width: 30%">');
     imageElementShiny.attr('src', item.imageShiny);
 
-    let heightElement = $('<p>' + 'Height :' + item.height + '</p>');
+    let heightElement = $('<p>' + 'Height :' + item.height + ' '+'m' + '</p>');
     let typeElement = $('<p>' + 'Type(s) :' + item.type +'</p>'); 
 
     modalTitle.append(nameElement);
