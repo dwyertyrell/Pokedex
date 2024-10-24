@@ -2,7 +2,7 @@
 let pokemonRepository = (function() {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?imit=150';
-    let modalContainer = document.getElementById('modal-container');
+    let modalContainer = document.querySelector('.modal-container');
 
 
     function add(pokemon){
