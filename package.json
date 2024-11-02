@@ -1,0 +1,17 @@
+{
+  "name": "simple-js-app",
+  "version": "1.0.0",
+  "description": "Pokedex Application\r Description:\r This is a simple JavaScript application that serves as a Pokedex, providing information about various Pokémon. It utilizes Bootstrap components for a user-friendly interface, including a modal for displaying detailed Pokémon information and a navbar for navigation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "eslint": "^9.14.0",
+    "globals": "^15.11.0"
+  }
+}
