@@ -4,7 +4,7 @@
 
 A simple JavaScript application that serves as a Pokedex, providing information about various Pokémon. The app features a modern, responsive UI using Bootstrap, and fetches data from the public [Pokémon API](https://pokeapi.co/api/v2/pokemon/?limit=150).
 
-[Here is the Pokedex Application, hosted via gh-pages](https://dwyertyrell.github.io/Pokedex/)
+Here is the Pokedex Application, hosted via gh-pages: [Pokedex](https://dwyertyrell.github.io/Pokedex/)
 This project is designed to demonstrate basic JavaScript skills, including DOM manipulation, event handling, and API integration. It is suitable for beginners looking to enhance their understanding of client-side web development.
 
 ---
