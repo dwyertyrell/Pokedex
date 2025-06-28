@@ -54,7 +54,7 @@ This project is designed to demonstrate basic JavaScript skills, including DOM m
    npm install
    ```
 3. **Run the app:**
-   Open `index.html` in your browser.
+   Open `index.html` in your browser or run on live server via your editor
 
 ---
 
