@@ -76,7 +76,8 @@ _Add screenshots of the client-side UI below. For example:_
 
 | Pokémon List | Pokémon Modal |
 |--------------|--------------|
-| ![List Screenshot](img/list-screenshot.png) | ![Modal Screenshot](img/modal-screenshot.png) |
+| ![List Screenshot](./img/pokemonList.png) | ![Modal Screenshot](./img/modal-1.png)  
+ ![Modal Screenshot](./img/modal-2.png)
 
 ---
 
