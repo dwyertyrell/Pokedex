@@ -4,9 +4,12 @@
 
 A simple JavaScript application that serves as a Pokedex, providing information about various Pokémon. The app features a modern, responsive UI using Bootstrap, and fetches data from the public [Pokémon API](https://pokeapi.co/api/v2/pokemon/?limit=150).
 
+**Built with jQuery and IIFE Architecture:**
+This application is **specifically built using the jQuery library** for DOM manipulation and event handling. The entire functionality is implemented using an **IIFE (Immediately Invoked Function Expression)** pattern in the `scripts.js` file, which provides encapsulation and creates a clean module structure for the Pokémon repository.
+
 Here is the Pokedex Application, hosted via gh-pages: [Pokedex](https://dwyertyrell.github.io/Pokedex/)
 
-This project is designed to demonstrate basic JavaScript skills, including DOM manipulation, event handling, and API integration. It is suitable for beginners looking to enhance their understanding of client-side web development.
+This project is designed to demonstrate JavaScript skills with jQuery integration, including DOM manipulation, event handling, and API integration using modular IIFE patterns. It is suitable for developers looking to enhance their understanding of jQuery-based client-side web development.
 
 ---
 
@@ -33,13 +36,14 @@ This project is designed to demonstrate basic JavaScript skills, including DOM m
 ---
 
 ## Technologies Used
-- JavaScript (ES6)
+- **jQuery 3.5.1** - Primary JavaScript library for DOM manipulation and event handling
+- **JavaScript (ES6)** - Core functionality implemented using IIFE (Immediately Invoked Function Expression)
 - HTML5
 - CSS3
-- [Bootstrap 5](https://getbootstrap.com/)
-- [Pokémon API](https://pokeapi.co/)
-- ESLint
-- Prettier
+- [Bootstrap 4.3.1](https://getbootstrap.com/) - UI framework and responsive design
+- [Pokémon API](https://pokeapi.co/) - RESTful API for Pokémon data
+- ESLint - Code linting and quality assurance
+- Prettier - Code formatting
 
 ---
 
@@ -87,12 +91,19 @@ _Add screenshots of the client-side UI below. For example:_
 │   └── ...
 ├── js/
 │   ├── fetch.umd.js
-│   └── scripts.js
+│   └── scripts.js          ←  MAIN FUNCTIONALITY: jQuery + IIFE implementation
 ├── index.html
 ├── package.json
 ├── eslint.config.mjs
 └── README.md
 ```
+
+### Key File: `js/scripts.js`
+The **core application logic** is contained in `scripts.js`, which shows:
+- **IIFE Pattern**: The entire `pokemonRepository` is wrapped in an Immediately Invoked Function Expression for encapsulation
+- **jQuery Integration**: All DOM manipulation and event handling uses jQuery syntax (`$`)
+- **Module Pattern**: separation of public and private methods within the IIFE
+- **API Integration**: Fetch operations and data management for Pokémon information
 
 ---
 
